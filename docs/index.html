@@ -177,7 +177,7 @@
   }
   .copy-btn:hover { color: var(--fg); border-color: var(--border-strong); background: var(--bg); }
   .copy-btn svg { width: 14px; height: 14px; }
-  .copy-btn[data-copied="true"] { color: var(--fg); }
+  .copy-btn[data-copied="true"] { color: var(--fg); border-color: var(--fg); background: var(--surface-2); }
 
   /* Keyboard chips */
   kbd {
@@ -250,8 +250,6 @@
     .codeblock pre { font-size: 13px; padding: 18px 18px; }
     h2.section-title { font-size: 26px; }
     p.lead { font-size: 17px; }
-    /* Allow long curl to break without horizontal scroll if user prefers */
-    .codeblock pre { white-space: pre; }
     /* Hide column 3 on very narrow screens to keep table readable */
     table th:nth-child(3), table td:nth-child(3) { display: none; }
   }
@@ -357,7 +355,7 @@ curl -fsSL https://raw.githubusercontent.com/cskwork/cmux-config/main/cmux.json 
       navigator.clipboard.writeText(text).then(function () {
         btn.setAttribute("data-copied", "true");
         setTimeout(function () { btn.removeAttribute("data-copied"); }, 1400);
-      });
+      }).catch(function () { /* clipboard unavailable; ignore */ });
     });
   });
 </script>
