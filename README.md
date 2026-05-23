@@ -28,6 +28,43 @@ The following keys exist in the macOS plist but are not exposed in cmux's publis
 
 If you want these portable, set them once via the in-app Settings panel on a new machine.
 
+## Ghostty config (cmux's embedded terminal)
+
+cmux embeds [Ghostty](https://ghostty.org) as its terminal renderer (you can see this in the cmux binary symbols: `Ghostty version`, `GhosttyBackgroundBlur`, `ghostty.backgroundColor`, etc.). Anything you customize on the terminal pane itself — font, background image, opacity, custom shaders — is a **Ghostty** setting, not a cmux setting, and lives in `~/.config/ghostty/config`.
+
+This repo therefore also tracks a small Ghostty config that goes hand-in-hand with the cmux setup:
+
+```
+ghostty/
+├── config.ghostty                  # font + background-image overrides
+└── backdrops/
+    └── cloudy-quasar.png           # 3840x2160 PNG referenced by config
+```
+
+### Active Ghostty overrides
+
+| Key | Value | Ghostty default |
+|---|---|---|
+| `font-family` | `JetBrainsMono Nerd Font` | system mono |
+| `font-style` | `Medium` | `Regular` |
+| `font-size` | `15` | `13` |
+| `background-image` | `~/.config/ghostty/backdrops/cloudy-quasar.png` | (none) |
+| `background-image-fit` | `cover` | `tile` |
+| `background-image-position` | `center` | `tl` |
+| `background-image-opacity` | `0.18` | `1.0` |
+
+### Apply on a new machine
+
+```sh
+mkdir -p ~/.config/ghostty/backdrops
+cp ghostty/config.ghostty ~/.config/ghostty/config
+cp ghostty/backdrops/cloudy-quasar.png ~/.config/ghostty/backdrops/
+```
+
+Note the destination filename is `config` (no extension) — that is Ghostty's canonical config path. The repo keeps the `.ghostty` extension purely as a hint to editors and to avoid colliding with a plain `config` file at the repo root.
+
+Restart cmux (or any other Ghostty surface) to pick up the change. tmux is unrelated here — tmux is a pure-text multiplexer and has no concept of a background image; what you see on the cmux pane comes from Ghostty.
+
 ## Apply on a new machine
 
 ```sh

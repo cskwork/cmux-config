@@ -1,0 +1,8 @@
+font-family = JetBrainsMono Nerd Font
+font-style = Medium
+font-size = 15
+
+background-image = ~/.config/ghostty/backdrops/cloudy-quasar.png
+background-image-fit = cover
+background-image-position = center
+background-image-opacity = 0.18
