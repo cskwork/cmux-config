@@ -9,7 +9,12 @@
   // Legacy settings.json files are read only as fallback for keys not present here.
 
   "app": {
-    "appearance": "dark"
+    "appearance": "dark",
+    "sendAnonymousTelemetry": false
+  },
+
+  "sidebarAppearance": {
+    "tintOpacity": 0.18
   },
 
   //   "app" : {

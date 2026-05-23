@@ -12,11 +12,21 @@ Landing page: https://cskwork.github.io/cmux-config/
 
 ### Active overrides
 
-| Key | Value | Plist source |
-|---|---|---|
-| `app.appearance` | `"dark"` | `appearanceMode` |
+| Key | Value | Schema default | Plist source |
+|---|---|---|---|
+| `app.appearance` | `"dark"` | `"system"` | `appearanceMode` |
+| `app.sendAnonymousTelemetry` | `false` | `true` | (not persisted in plist; file-managed to enforce opt-out across machines) |
+| `sidebarAppearance.tintOpacity` | `0.18` | `0.03` | `sidebarTintOpacity` |
 
 Everything else falls back to either the in-app Settings value or the schema default. Window geometry, file-explorer width, Sparkle update state, and other transient runtime state are intentionally not file-managed.
+
+### Settings the cmux.json schema can't manage yet
+
+The following keys exist in the macOS plist but are not exposed in cmux's published JSON schema, so they cannot be put in `cmux.json` today:
+
+- `sidebarMaterial`, `sidebarBlendMode`, `sidebarPreset`, `sidebarState`, `sidebarBlurOpacity`, `sidebarCornerRadius`
+
+If you want these portable, set them once via the in-app Settings panel on a new machine.
 
 ## Apply on a new machine
 

@@ -305,7 +305,7 @@ curl -fsSL https://raw.githubusercontent.com/cskwork/cmux-config/main/cmux.json 
 
   <section aria-labelledby="overrides-title">
     <p class="eyebrow upper">// active overrides</p>
-    <h2 id="overrides-title" class="section-title">Just one knob, today.</h2>
+    <h2 id="overrides-title" class="section-title">Three knobs, today.</h2>
     <p class="body">
       Everything else falls back to the value saved in the in-app Settings panel or the cmux schema default. The full template is preserved as commented blocks so you can extend it later.
     </p>
@@ -315,18 +315,31 @@ curl -fsSL https://raw.githubusercontent.com/cskwork/cmux-config/main/cmux.json 
           <tr>
             <th>Key</th>
             <th>Value</th>
-            <th>Source plist key</th>
+            <th>Schema default</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>app.appearance</td>
             <td>"dark"</td>
-            <td class="muted">appearanceMode</td>
+            <td class="muted">"system"</td>
+          </tr>
+          <tr>
+            <td>app.sendAnonymousTelemetry</td>
+            <td>false</td>
+            <td class="muted">true</td>
+          </tr>
+          <tr>
+            <td>sidebarAppearance.tintOpacity</td>
+            <td>0.18</td>
+            <td class="muted">0.03</td>
           </tr>
         </tbody>
       </table>
     </div>
+    <p class="caption">
+      cmux also stores <code class="inline">sidebarMaterial</code>, <code class="inline">sidebarBlendMode</code>, <code class="inline">sidebarPreset</code>, <code class="inline">sidebarState</code>, <code class="inline">sidebarBlurOpacity</code>, and <code class="inline">sidebarCornerRadius</code> in its macOS plist, but the published JSON schema doesn&rsquo;t expose them yet, so they can&rsquo;t be file-managed here.
+    </p>
   </section>
 
 </main>
