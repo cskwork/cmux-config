@@ -4,6 +4,8 @@ Personal configuration for [cmux](https://github.com/manaflow-ai/cmux) — the m
 
 This repo tracks the file-managed portion of cmux settings (`~/.config/cmux/cmux.json`) so the setup is portable across machines.
 
+Landing page: https://cskwork.github.io/cmux-config/
+
 ## What's in here
 
 - **`cmux.json`** — JSONC config consumed by cmux at launch. The full schema template is preserved as commented blocks; only intentionally overridden keys are active.

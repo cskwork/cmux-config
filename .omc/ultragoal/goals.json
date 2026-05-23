@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "createdAt": "2026-05-23T13:13:29.186Z",
+  "updatedAt": "2026-05-23T13:13:32.805Z",
+  "briefPath": ".omc/ultragoal/brief.md",
+  "goalsPath": ".omc/ultragoal/goals.json",
+  "ledgerPath": ".omc/ultragoal/ledger.jsonl",
+  "claudeGoalMode": "aggregate",
+  "goals": [
+    {
+      "id": "G001-stitch-design-screen-generation",
+      "title": "Stitch design + screen generation",
+      "objective": "Create Stitch project, configure Modern dev-tool dark design system, generate landing page screen via generate_screen_from_text, capture screen id.",
+      "status": "in_progress",
+      "attempt": 1,
+      "createdAt": "2026-05-23T13:13:29.186Z",
+      "updatedAt": "2026-05-23T13:13:32.805Z",
+      "startedAt": "2026-05-23T13:13:32.805Z"
+    },
+    {
+      "id": "G002-extract-to-static-html-css",
+      "title": "Extract to static HTML/CSS",
+      "objective": "Use Stitch extract-static-html to land self-contained HTML+CSS into docs/ in the repo working tree.",
+      "status": "pending",
+      "attempt": 0,
+      "createdAt": "2026-05-23T13:13:29.186Z",
+      "updatedAt": "2026-05-23T13:13:29.186Z"
+    },
+    {
+      "id": "G003-localize-content-polish",
+      "title": "Localize content + polish",
+      "objective": "Edit copy and links to match the locked content scope (real repo URL, exact install snippet, real overrides table, real cmux version). Verify in browser at desktop and mobile widths.",
+      "status": "pending",
+      "attempt": 0,
+      "createdAt": "2026-05-23T13:13:29.186Z",
+      "updatedAt": "2026-05-23T13:13:29.186Z"
+    },
+    {
+      "id": "G004-publish-enable-pages-verify-live",
+      "title": "Publish + enable Pages + verify live",
+      "objective": "Commit docs/ to main, push, enable Pages source=main /docs via gh api, curl live URL and confirm 200 + expected strings.",
+      "status": "pending",
+      "attempt": 0,
+      "createdAt": "2026-05-23T13:13:29.186Z",
+      "updatedAt": "2026-05-23T13:13:29.186Z"
+    },
+    {
+      "id": "G005-final-gate",
+      "title": "Final gate",
+      "objective": "Run ai-slop-cleaner, rerun verification, run code-review on the diff; pass quality-gate-json with APPROVE + CLEAR.",
+      "status": "pending",
+      "attempt": 0,
+      "createdAt": "2026-05-23T13:13:29.186Z",
+      "updatedAt": "2026-05-23T13:13:29.186Z"
+    }
+  ],
+  "claudeObjective": "Complete all ultragoal stories in .omc/ultragoal/goals.json: G001-stitch-design-screen-generation Stitch design + screen generation; G002-extract-to-static-html-css Extract to static HTML/CSS; G003-localize-content-polish Localize content + polish; G004-publish-enable-pages-verify-live Publish + enable Pages + verify live; G005-final-gate Final gate",
+  "activeGoalId": "G001-stitch-design-screen-generation"
+}
